@@ -238,7 +238,7 @@ body{background-image:radial-gradient(circle at 4% 18%,rgba(255,79,135,.17),tran
 .hero-photo .photo-label,.hero-photo .photo-caption{z-index:2;text-shadow:0 2px 12px rgba(0,0,0,.45)}
 .hero-photo:has(.slot-image.image-loaded):before,.hero-photo:has(.slot-image:not([hidden])):after{opacity:0}
 .collection-image{border-radius:5px 55px 5px 5px}
-.collection-image .slot-image{z-index:-2}
+.collection-image .slot-image{z-index:0}
 .collection-image:has(.slot-image:not([hidden])):after{background:linear-gradient(0deg,rgba(15,10,20,.55),transparent 65%);inset:0;width:auto;height:auto;left:0;top:0;transform:none;border-radius:0}
 .collection-image:has(.slot-image:not([hidden])):before{background:linear-gradient(0deg,rgba(15,10,20,.3),transparent 60%)}
 .detail-placeholder{border-radius:5px 35px 5px 5px}
@@ -279,7 +279,7 @@ body{background-image:radial-gradient(circle at 4% 18%,rgba(255,79,135,.17),tran
 .hero-photo .photo-label,.hero-photo .photo-caption{z-index:2;text-shadow:0 2px 12px rgba(0,0,0,.45)}
 .hero-photo:has(.slot-image:not([hidden])):before,.hero-photo:has(.slot-image:not([hidden])):after{opacity:0}
 .collection-image{border-radius:5px 55px 5px 5px}
-.collection-image .slot-image{z-index:-2}
+.collection-image .slot-image{z-index:0}
 .collection-image:has(.slot-image:not([hidden])):after{background:linear-gradient(0deg,rgba(15,10,20,.55),transparent 65%);inset:0;width:auto;height:auto;left:0;top:0;transform:none;border-radius:0}
 .detail-placeholder{border-radius:5px 35px 5px 5px}
 .detail-placeholder .slot-image{z-index:0}
@@ -308,7 +308,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--electric);outline-o
 .detail-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(3,320px);grid-auto-rows:320px;gap:20px}
 .detail-large{grid-row:span 2}
 .detail-placeholder{position:relative;overflow:hidden;height:calc(100% - 24px);isolation:isolate}
-.detail-placeholder .slot-image{z-index:-1}
+.detail-placeholder .slot-image{z-index:0}
 .detail-tile:hover .slot-image{transform:scale(1.06)}
 .detail-placeholder span{z-index:2;pointer-events:none}
 .gallery-note{font-weight:900;letter-spacing:.16em}
