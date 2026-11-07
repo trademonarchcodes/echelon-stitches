@@ -22,16 +22,19 @@ nav?.querySelectorAll("a").forEach((link) => {
   });
 });
 
-const revealObserver = new IntersectionObserver((entries, observer) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-
-document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px 60px 0px" });
+  document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+} else {
+  document.querySelectorAll(".reveal").forEach((element) => element.classList.add("visible"));
+}
 
 document.querySelectorAll("[data-whatsapp]").forEach((link) => {
   if (WHATSAPP_NUMBER) {
