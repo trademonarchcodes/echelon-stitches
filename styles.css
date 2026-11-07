@@ -302,3 +302,15 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--electric);outline-o
 @media(prefers-reduced-motion:reduce){.hero-copy{animation:none}}
 
 .slot-image,.brand-logo{display:none}.slot-image.image-loaded,.brand-logo.image-loaded{display:block}
+
+
+/* Expanded lookbook gallery */
+.detail-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(3,320px);grid-auto-rows:320px;gap:20px}
+.detail-large{grid-row:span 2}
+.detail-placeholder{position:relative;overflow:hidden;height:calc(100% - 24px);isolation:isolate}
+.detail-placeholder .slot-image{z-index:-1}
+.detail-tile:hover .slot-image{transform:scale(1.06)}
+.detail-placeholder span{z-index:2;pointer-events:none}
+.gallery-note{font-weight:900;letter-spacing:.16em}
+@media(max-width:760px){.detail-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(5,240px);grid-auto-rows:240px;gap:14px}.detail-large{grid-row:span 2}}
+@media(max-width:420px){.detail-grid{grid-template-columns:1fr;grid-template-rows:none;grid-auto-rows:340px}.detail-large{grid-row:span 1}}
