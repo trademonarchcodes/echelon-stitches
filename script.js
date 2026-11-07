@@ -61,3 +61,16 @@ document.addEventListener("keydown", (event) => {
     menuButton?.focus();
   }
 });
+
+
+/* Named image slots: uploaded files display automatically; missing files keep the designed fallback. */
+document.querySelectorAll(".slot-image").forEach((img) => {
+  const showImage = () => {
+    img.classList.add("image-loaded");
+    const label = img.parentElement?.querySelector(":scope > span");
+    if (label) label.style.opacity = "0";
+  };
+  img.addEventListener("load", showImage);
+  img.addEventListener("error", () => img.classList.remove("image-loaded"));
+  if (img.complete && img.naturalWidth > 0) showImage();
+});
