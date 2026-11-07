@@ -10,6 +10,7 @@ const nav = document.querySelector(".main-nav");
 menuButton?.addEventListener("click", () => {
   const isOpen = menuButton.getAttribute("aria-expanded") === "true";
   menuButton.setAttribute("aria-expanded", String(!isOpen));
+  menuButton.setAttribute("aria-label", !isOpen ? "Close navigation" : "Open navigation");
   nav?.classList.toggle("open", !isOpen);
 });
 
@@ -17,6 +18,7 @@ nav?.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
     nav.classList.remove("open");
     menuButton?.setAttribute("aria-expanded", "false");
+    menuButton?.setAttribute("aria-label", "Open navigation");
   });
 });
 
@@ -50,3 +52,12 @@ document.querySelectorAll("[data-whatsapp]").forEach((link) => {
 
 const year = document.querySelector("#year");
 if (year) year.textContent = new Date().getFullYear();
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && nav?.classList.contains("open")) {
+    nav.classList.remove("open");
+    menuButton?.setAttribute("aria-expanded", "false");
+    menuButton?.setAttribute("aria-label", "Open navigation");
+    menuButton?.focus();
+  }
+});
