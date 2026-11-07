@@ -74,3 +74,11 @@ document.querySelectorAll(".slot-image").forEach((img) => {
   img.addEventListener("error", () => img.classList.remove("image-loaded"));
   if (img.complete && img.naturalWidth > 0) showImage();
 });
+
+
+document.querySelectorAll(".brand-logo").forEach((img) => {
+  const showLogo = () => img.classList.add("image-loaded");
+  img.addEventListener("load", showLogo);
+  img.addEventListener("error", () => img.classList.remove("image-loaded"));
+  if (img.complete && img.naturalWidth > 0) showLogo();
+});
