@@ -300,3 +300,5 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--electric);outline-o
 @media(max-width:760px){.site-header{z-index:30}.brand-logo{width:39px;height:39px}.hero-art{filter:drop-shadow(8px 10px 0 rgba(23,20,43,.08))}.hero-photo{border-radius:4px 48px 4px 4px}.collection-image{border-radius:4px 42px 4px 4px}.detail-placeholder{border-radius:4px 25px 4px 4px}.values-strip{border-radius:18px;padding:16px 12px}.booking{border-radius:28px 28px 0 0}.booking-button,.channel-button{justify-content:space-between}.intro:after{right:1%;top:8%;font-size:85px}.site-footer:after{font-size:150px;right:-25px;top:-35px}}
 @media(max-width:380px){.brand-logo{width:34px;height:34px}}
 @media(prefers-reduced-motion:reduce){.hero-copy{animation:none}}
+
+.slot-image,.brand-logo{display:none}.slot-image.image-loaded,.brand-logo.image-loaded{display:block}
