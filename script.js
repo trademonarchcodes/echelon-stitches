@@ -1,7 +1,7 @@
 /* Echelon Stitches — site interactions
    Add the client's WhatsApp number below when it is available.
    Use international format without +, spaces or punctuation. */
-const WHATSAPP_NUMBER = "";
+const WHATSAPP_NUMBER = "2349138170355";
 const WHATSAPP_MESSAGE = "Hello Echelon Stitches! I'd love to enquire about a bespoke outfit.";
 
 const menuButton = document.querySelector(".menu-toggle");
