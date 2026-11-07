@@ -7,7 +7,6 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{margin:0;background:radial-gradient(ellipse at 8% 12%,rgba(255,79,135,.10),transparent 28%),radial-gradient(ellipse at 92% 38%,rgba(115,91,255,.10),transparent 30%),var(--cream);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 ::selection{background:var(--hot);color:#fff}
-.announcement{height:32px;background:var(--hot);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 4.5%;font-size:9px;font-weight:800;letter-spacing:.16em}
 .site-header{height:88px;padding:0 4.5%;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--ink);position:relative;z-index:10;background:var(--cream)}
 .wordmark{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:900;letter-spacing:.08em;line-height:1.02}
 .wordmark-mark{width:43px;height:43px;border:2px solid var(--hot);border-radius:50%;display:grid;place-items:center;color:var(--hot);font-family:var(--display);font-size:17px;letter-spacing:-.1em;transform:rotate(-9deg)}
@@ -16,9 +15,9 @@ a{color:inherit;text-decoration:none}
 .main-nav a{position:relative;padding:9px 0}
 .main-nav a:after{content:"";position:absolute;bottom:2px;left:0;width:0;height:3px;background:var(--hot);transition:width .25s}
 .main-nav a:hover:after{width:100%}
-.header-cta{font-size:10px;font-weight:900;letter-spacing:.1em;background:var(--ink);color:var(--cream);padding:15px 19px;border-radius:2px;box-shadow:4px 4px 0 var(--hot);transition:transform .2s,box-shadow .2s}
-.header-cta:hover{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--hot)}
-.header-cta span{color:var(--gold);margin-left:12px;font-size:15px}
+.header-cta{position:relative;isolation:isolate;display:inline-flex;align-items:center;gap:18px;font-size:10px;font-weight:900;letter-spacing:.1em;background:linear-gradient(110deg,#ff4f87,#8958ff);color:#fff;padding:8px 9px 8px 20px;border-radius:999px;box-shadow:0 7px 0 #17142b,0 10px 24px rgba(137,88,255,.22);transition:transform .22s,box-shadow .22s;overflow:hidden}.header-cta:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(110deg,transparent 20%,rgba(255,255,255,.35) 48%,transparent 70%);transform:translateX(-120%);transition:transform .55s}.header-cta:hover:before{transform:translateX(120%)}
+.header-cta:hover{transform:translateY(3px);box-shadow:0 3px 0 #17142b,0 5px 14px rgba(137,88,255,.2)}
+.header-cta span{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:var(--gold);color:var(--ink);margin:0;font-size:17px}
 .menu-toggle{display:none}
 .hero{padding:60px 4.5% 22px;display:grid;grid-template-columns:1.03fr .97fr;column-gap:4%;position:relative;min-height:690px;background:var(--cream)}
 .hero-copy{position:relative;z-index:2}
@@ -104,10 +103,10 @@ h1,h2,h3,p{margin-top:0}
 .booking-copy{max-width:360px;color:#57443b}
 .booking-actions{display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin:25px 0 20px}
 .booking-button,.channel-button{display:inline-flex;align-items:center;justify-content:space-between;gap:35px;padding:20px 23px;font-size:10px;font-weight:900;letter-spacing:.1em;transition:transform .2s,box-shadow .2s,background .2s}
-.booking-button{background:var(--hot);color:#fff;box-shadow:5px 5px 0 var(--ink)}
-.booking-button:hover{background:var(--wine);transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
-.channel-button{background:var(--ink);color:var(--cream);border:2px solid var(--ink)}
-.channel-button:hover{background:var(--cream);color:var(--ink);transform:translateY(-4px);box-shadow:0 6px 0 rgba(33,21,23,.2)}
+.booking-button{background:linear-gradient(110deg,#ff4f87,#8958ff);color:#fff;border-radius:999px;box-shadow:0 6px 0 var(--ink),0 12px 25px rgba(84,38,95,.2);padding:10px 11px 10px 23px}
+.booking-button:hover{background:linear-gradient(110deg,#8958ff,#ff4f87);transform:translateY(3px);box-shadow:0 3px 0 var(--ink),0 7px 16px rgba(84,38,95,.18)}
+.channel-button{background:rgba(255,255,255,.3);color:var(--ink);border:2px solid var(--ink);border-radius:999px;padding:17px 22px}
+.channel-button:hover{background:var(--ink);color:var(--cream);transform:translateY(-4px);box-shadow:0 6px 0 rgba(33,21,23,.2)}
 .channel-button span,.booking-button span{font-size:18px}
 .booking-content small{display:block;color:#57443b;font-size:9px;font-weight:900;letter-spacing:.12em}
 .booking-side{position:absolute;right:5%;bottom:8%;font-family:var(--display);font-size:clamp(160px,25vw,340px);line-height:.7;color:rgba(111,31,53,.13);text-align:center;letter-spacing:-.1em;transform:rotate(-9deg)}
