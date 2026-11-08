@@ -85,3 +85,28 @@ document.querySelectorAll(".brand-logo").forEach((img) => {
   img.addEventListener("error", () => img.classList.remove("image-loaded"));
   if (img.complete && img.naturalWidth > 0) showLogo();
 });
+
+
+/* Full image catalogue: every unique uploaded image in the product/detail folders. */
+const ECHELON_ALL_IMAGES = ["craft-details/beige-striped-fabric-garment-detail.jpg","craft-details/blue-embroidery-work-detail.jpg","craft-details/blue-woven-fabric-detail.jpg","menswear/black-embroidered-top-mannequin.jpg","menswear/black-kaftan-model.jpg","menswear/black-tailored-trousers-detail.jpg","menswear/blush-pink-traditional-set-model.jpg","menswear/burgundy-embroidered-set-flatlay.jpg","menswear/charcoal-traditional-set-model.jpg","menswear/chocolate-kaftan-model.jpg","menswear/cream-smart-casual-set-model.jpg","menswear/lilac-two-piece-model.jpg","menswear/lime-green-outfit-flatlay.jpg","menswear/lime-short-sleeve-set-mannequin.jpg","menswear/mauve-kaftan-model.jpg","menswear/midnight-blue-kaftan-model.jpg","menswear/mustard-embroidered-set-flatlay.jpg","menswear/olive-outfit-mannequin.jpg","menswear/plum-kaftan-model.jpg","menswear/printed-casual-shirt-model.jpg","menswear/purple-traditional-set-model.jpg","menswear/royal-blue-traditional-set-mannequin.jpg","menswear/sand-kaftan-model.jpg","menswear/white-embroidered-kaftan-flatlay.jpg","menswear/white-graphic-casual-set-model.jpg","review-needed/blue-shirt-phone-screenshot-2.jpg","review-needed/blue-shirt-phone-screenshot.jpg","review-needed/brown-garment-phone-screenshot.jpg","review-needed/mauve-garment-screen-capture.jpg","review-needed/orange-shirt-phone-screenshot.jpg","review-needed/patterned-outfit-phone-screenshot.jpg","review-needed/purple-childrenswear-illustration.jpg","review-needed/stylised-black-dress-illustration.jpg","review-needed/stylised-pink-dress-illustration.jpg","womenswear/matching-red-black-womenswear.jpg","womenswear/orange-patterned-occasionwear-mannequin.jpg","womenswear/printed-occasion-dress-model.jpg"];
+const allPhotosGrid = document.querySelector("#allPhotosGrid");
+if (allPhotosGrid) {
+  const readableName = (path) => path.split("/").pop().replace(/\\.(jpg|jpeg|png|webp)$/i, "").replace(/[-_]+/g, " ").replace(/\\b\\w/g, (letter) => letter.toUpperCase());
+  ECHELON_ALL_IMAGES.forEach((path, index) => {
+    const category = path.split("/")[0].replace(/-/g, " ").toUpperCase();
+    const card = document.createElement("figure");
+    card.className = "all-photo-card";
+    const image = document.createElement("img");
+    image.src = path;
+    image.alt = readableName(path);
+    image.loading = "lazy";
+    image.decoding = "async";
+    image.addEventListener("error", () => card.classList.add("is-broken"), { once: true });
+    const caption = document.createElement("figcaption");
+    const label = document.createElement("small");
+    label.textContent = String(index + 1).padStart(2, "0") + " / " + category;
+    caption.append(label, document.createTextNode(readableName(path)));
+    card.append(image, caption);
+    allPhotosGrid.append(card);
+  });
+}
