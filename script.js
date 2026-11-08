@@ -98,15 +98,11 @@ if (allPhotosGrid) {
     card.className = "all-photo-card";
     const image = document.createElement("img");
     image.src = path;
-    image.alt = readableName(path);
+    image.alt = "Echelon Stitches fashion look";
     image.loading = "lazy";
     image.decoding = "async";
     image.addEventListener("error", () => card.classList.add("is-broken"), { once: true });
-    const caption = document.createElement("figcaption");
-    const label = document.createElement("small");
-    label.textContent = String(index + 1).padStart(2, "0") + " / " + category;
-    caption.append(label, document.createTextNode(readableName(path)));
-    card.append(image, caption);
+    card.append(image);
     allPhotosGrid.append(card);
   });
 }
